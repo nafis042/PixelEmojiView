@@ -213,6 +213,12 @@ extension EmojiCollectionView: UICollectionViewDelegateFlowLayout {
         return inset
     }
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let height: CGFloat = 50
+        let n = Int((collectionView.bounds.height - 20) / height)
+        return CGSize(width: height, height: (collectionView.bounds.height - 20) / CGFloat(n))
+    }
+    
 }
 
 // MARK: - UIScrollView
